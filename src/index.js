@@ -1,14 +1,20 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-
+import mongoose from 'mongoose';
 const server = express();
 
 // configuracionesn del puerto
-server.set('port', process.env.PORT || 3000);
+server.set('port', process.env.PORT || 4000);
 
 // conexión base de datos
+const uri = 'mongodb://localhost:27017/CoOfi'
+const options = {useNewUrlParser:true, useUnifiedTopology: true};
 
+mongoose.connect(uri, options).then(
+    () => { console.log('Conectado a la base de datos.')},
+    err => { console.log(err)}
+);
 // middlewares
 server.use(morgan('tiny'));
 server.use(cors());
