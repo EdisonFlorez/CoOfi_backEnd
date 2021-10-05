@@ -1,5 +1,5 @@
 {
-  "name": "coofi_frontend",
+  "name": "coofi_backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,26 +9,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EdisonFlorez/CoOfi_frontEnd.git"
+    "url": "git+https://github.com/EdisonFlorez/CoOfi_backEnd.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EdisonFlorez/CoOfi_frontEnd/issues"
+    "url": "https://github.com/EdisonFlorez/CoOfi_backEnd/issues"
   },
-  "homepage": "https://github.com/EdisonFlorez/CoOfi_frontEnd#readme",
+  "homepage": "https://github.com/EdisonFlorez/CoOfi_backEnd#readme",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^6.0.8",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.13"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
     "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
+    "nodemon": "^2.0.13",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^5.56.0",
