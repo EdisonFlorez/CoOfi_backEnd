@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 const server = express();
 
 // configuracionesn del puerto
-server.set("port", process.env.PORT || 8000);
+server.set("port", process.env.PORT || 4000);
 
 // conexión base de datos MongoAtlas
 const uri =
