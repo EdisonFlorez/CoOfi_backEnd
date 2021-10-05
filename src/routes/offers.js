@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const Task = require('../models/Task');
+const Offers = require('../models/Offers');
 
 router.get('/', async (req,res) => {
     //res.send('API task is goes here')
-    const tasks = await Task.find();
+    const tasks = await Offers.find();
     //console.log(tasks); // aqui van todos los datos
     res.json(tasks);
 });
@@ -16,10 +16,10 @@ router.post('/', async (req,res)=>{
     //console.log(new Task());
     // console.log(req.body);
     // res.json('recived');
-    const task = new Task(req.body);
+    const task = new Offers(req.body);
     await task.save();
     res.json({
-        status: "Task Saved"
+        status: "Guardado"
     });
 
 });
@@ -28,7 +28,7 @@ router.post('/', async (req,res)=>{
 router.put('/:id',async(req,res) =>{
     //const rep = req.params
     console.log(req.params.id);
-    await Task.findByIdAndUpdate(req.params.id, req.body);
+    await Offers.findByIdAndUpdate(req.params.id, req.body);
     res.json({
         status: "Actualizado"
     });
@@ -36,7 +36,7 @@ router.put('/:id',async(req,res) =>{
 });
 
 router.delete('/:id', async(req, res) =>{
-    await Task.findByIdAndRemove(req.params.id);
+    await Offers.findByIdAndRemove(req.params.id);
     res.json({
         status: "Borrado"
     });

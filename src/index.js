@@ -1,11 +1,15 @@
+// npm install nodemon --save-dev
+
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 
 const app = express();
-mongoose.connect('mongodb://localhost/mev-database')
-    .then(db => console.log('DB is conected'))
-    .catch(err => console.error(err));
+// mongodb+srv://dbUser:OAyQXFoAmqEcXk15@cluster0.wsmyw.mongodb.net/CoOfi?retryWrites=true&w=majority
+// mongodb://localhost/mev-database
+mongoose.connect('mongodb+srv://dbUser:OAyQXFoAmqEcXk15@cluster0.wsmyw.mongodb.net/CoOfi?retryWrites=true&w=majority')
+.then(db => console.log('DB is conected'))
+.catch(err => console.error(err));
 
 
 // Settings
@@ -16,7 +20,7 @@ app.use(express.json());
 
 
 // Routes
-app.use('/tasks',require('./routes/tasks'));
+app.use('/offers',require('./routes/offers'));
 
 // Static files
 //console.log(__dirname + '/public')
