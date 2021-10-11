@@ -3,7 +3,6 @@ import morgan from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 
-
 const server = express();
 
 // configuracionesn del puerto
@@ -14,16 +13,15 @@ const uri =
   "mongodb+srv://dbUser:OAyQXFoAmqEcXk15@cluster0.wsmyw.mongodb.net/CoOfi?retryWrites=true&w=majority";
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
-let db; 
-
 mongoose.connect(uri, options).then(
   () => {
-    console.log("Conectado a la base de datos.");                                                                                  
+    console.log("Conectado a la base de datos.");
   },
   (err) => {
     console.log(err);
   }
 );
+
 // middlewares
 server.use(morgan("tiny"));
 server.use(cors());
@@ -31,8 +29,7 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 // API
-server.use("/", require("./routes/users" ));
-
+server.use("/", require("./routes/offers"));
 
 // middleware Vue
 const history = require("connect-history-api-fallback");
